@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spending Chart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="outer-div">
+    <div class="balance">
+      <div class="balance-content"> 
+        <p class="My">My balance</p>
+        <h1>$921.48</h1>
+      </div>
+      <img class="logo" src="images/logo.svg" alt="logo">
+    </div>
+    <div class="container">
+      <div class="chart-section">
+        <h2>Spending – Last 7 days</h2>
+        <div class="bar-chart" id="bar-chart"></div>
+
+          <!-- Bars will be dynamically created here -->
+        </div>
+      </div>
+      <div class="footer">
+        <p>Total this month<br>
+        <span class="month"><b>$478.33</b></span></p>
+        <p class="fro">
+          <span class="from"><b class="percentage">+2.4%</b></span><br>from last month
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

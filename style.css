@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #f8e9dd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-top-left-radius: 15px;   /* Rounded corners on the top left */
+    border-top-right-radius: 15px;  /* Rounded corners on the top right */
+    border-bottom-left-radius: 0;    /* No rounding on the bottom left */
+    border-bottom-right-radius: 0;   /* No rounding on the bottom right */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+  .balance {
+    background-color: hsl(10, 79%, 65%);
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .balance-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .balance h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  .logo {
+    height: 50px;
+    margin-left: 20px;
+  }
+  
+  .chart-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .bar-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 190px;
+    padding: 10px;
+    border: 0px solid #ddd;
+  }
+  
+  
+  .bar-container {
+    text-align: center;
+    width: 12%; /* Adjust width based on number of bars */
+    position: relative;
+  }
+  
+  .bar {
+    width: 100%;
+    background-color: hsl(10, 79%, 65%);
+    border-radius: 5px;
+    position: relative; /* Needed for tooltip positioning */
+    transition: background-color 0.3s ease;
+  }
+  
+  .bar:hover::before {
+    content: attr(data-amount);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  
+  .bar:hover {
+    background-color: hsl(10, 79%, 75%);
+  }
+
+.day-label {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20px;
+    border-top-left-radius: 0px;   /* Rounded corners on the top left */
+    border-top-right-radius: 0px;  /* Rounded corners on the top right */
+    border-bottom-left-radius: 15px;    /* No rounding on the bottom left */
+    border-bottom-right-radius: 15px;   /* No rounding on the bottom right */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 0px;
+  }
+  
+  .footer span {
+    display: flex;
+    font-size: 1.5rem;
+    margin: 0px 0;
+    color: black;
+  
+  }
+
+  .footer .from {
+    display: flex;
+    font-size: 1.0rem;
+    color: black;
+   margin-top: 7px;
+   justify-content: flex-start;
+  
+  }
+  
+  .footer .from + br {
+    display: none; /* Remove the extra line break if unnecessary */
+  }
+  
+  .footer .fro {
+    text-align: right;
+   
+  }
+  .footer p {
+    font-size: 0.7rem;
+    color: hsl(28, 10%, 53%);
+
+  }
+
+  .percentage {
+    margin-left: 100px;} /* Optional: Adjust as needed for spacing */
+
+    .bar:hover .tooltip {
+        opacity: 1;
+        visibility: visible;
+      }
+   
+
+    .tooltip {
+        position: absolute;
+        bottom: 110%; /* Position the tooltip above the bar */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: white;
+        padding: 5px 8px;
+        border-radius: 3px;
+        font-size: 12px;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease;
+        z-index: 10; /* Make sure tooltips are above other content */
+      }
+
+
+      @media (max-width: 375px) {
+        .container {
+            width: 120%;            /* Full width on mobile */
+            border-top-left-radius: 10px;   /* Adjusted rounding */
+            border-top-right-radius: 10px;  /* Adjusted rounding */
+           
+            
+        }
+    
+    .outer-div{
+        padding-right: 50px;
+    }
+    
+        .balance {
+            width: 120%;            /* Full width on mobile */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+       
+        }
+    
+.balance .my {
+    margin-right: 50px;
+    color: aqua;
+}
+
+        .balance-content {
+            text-align: left;  
+            margin-left: 0;     /* Center text */
+        }
+    
+        .bar-chart {
+            height: 170px;          /* Keep height adjustment for mobile view */
+        }
+    
+        .bar {
+            min-height: 20px;       /* Minimum height for visibility */
+        }
+    
+        h2 {
+            font-size: 18px;        /* Adjusted font size for headers */
+        }
+    
+        .footer {
+            font-size: 14px;  
+            width: 120%;            /* Full width for the footer */
+            text-align: center;     /* Center text */
+    
+        }
+    }
+    
